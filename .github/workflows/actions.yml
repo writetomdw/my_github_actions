@@ -8,6 +8,12 @@ jobs:
     name: run an application
     runs-on: ubuntu-latest
     steps:
+      - name: List files in the github vm runner
+        run: |
+          pwd
+          ls -a
+      - name: Log greeting time
+        run: echo "${{steps.greet.outputs.time}}"
       - name: Simple JS Action
         id: greet
         uses: actions/hello-world-javascript-action@v1.1
