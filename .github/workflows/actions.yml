@@ -12,8 +12,12 @@ jobs:
         run: |
           pwd
           ls -a
-      - name: Log greeting time
-        run: echo "${{steps.greet.outputs.time}}"
+      - name: Clone repo
+        uses: actions/checkout@v3.1.0
+      - name: List files again after checkout action
+        run: |
+          pwd
+          ls -a
       - name: Simple JS Action
         id: greet
         uses: actions/hello-world-javascript-action@v1.1
