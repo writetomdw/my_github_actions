@@ -12,6 +12,12 @@ jobs:
         run: |
           pwd
           ls -a
+      - name: Echo env variables and context variable
+        run: |
+          echo ${{github.token}}
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_WORKSPACE
       - name: Clone repo
         uses: actions/checkout@v3.1.0
       - name: List files again after checkout action
